@@ -39,6 +39,27 @@ if (diceGamePc > diceGameUser) { //se il numero generato dal pc e maggiore di us
     console.log('user win');
 }
 
+
 // mail
 
-/* let emailUser = prompt("Please enter your email"); */
+let emailUser = prompt("Please enter your email"); //inserisco un email
+
+const emailList = ["qwerty@gmail.com", "12345@gmail.com", "prova@gmail.com"] //lista email riconosciute
+
+let registered = false //verifica
+
+for (let i = 0; i < emailList.length; i++) { //loop per controllare tra le email 
+    const userLogin = emailList[i]; 
+  
+    if (userLogin == emailUser) { //se sono uguali allora 
+        registered = true;  // verifica cofermata
+    }
+}
+  
+if(registered == true) {
+    console.log(emailUser);   //email  riconosciuta 
+    alert("benvenuto");
+}else {
+    alert("utente non trovato "); //email non riconosciuta 
+}
+
